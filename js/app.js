@@ -23,7 +23,18 @@ const showProducts = (products) => {
       <p>Average Rating : ${product.rating.rate}</p>
       <p>Total Ratings : ${product.rating.count}</p>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-      <button id="details-btn" class="btn btn-danger">Details</button></div>
+      <button id="details-btn" class="btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Details</button>
+      </div>
+
+      <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+        <div class="offcanvas-header">
+          <div class="text-center mx-auto">
+            <h1 id="offcanvasTopLabel" class="d-block" pt-5>${product.title}</h1>
+            <h3  class="d-block mt-5" >${product.description}</h3>
+          </div> 
+        </div>
+      </div>
+
       `;
     document.getElementById("all-products").appendChild(div);
   }
